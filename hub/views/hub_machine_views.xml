@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hub_machine_action" model="ir.actions.act_window">
+        <field name="name">Machine</field>
+        <field name="res_model">machine.info</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add Your First Property
+            </p>
+        </field>
+    </record>
+
+<!-- Tree view  -->
+    <record id="hub_machine_tree_view" model="ir.ui.view">
+    <field name="name">hub.machine.tree</field>
+    <field name="model">machine.info</field>
+    <field name="arch" type="xml">
+    <tree>
+    <field name="name"/>
+    <field name="product_type_id"/>
+    <field name="price"/>
+    </tree>
+    </field>
+    </record>
+
+<!-- form view  -->
+    <record id="hub_machine_form_view" model="ir.ui.view">
+    <field name="name">hub.machine.form</field>
+    <field name="model">machine.info</field>
+    <field name="arch" type="xml">
+    <form>
+    <sheet>
+        <div>
+        <h1> <field name="name"/></h1>
+        </div>
+        
+    </sheet>
+    </form>
+    </field>
+    </record>
+</odoo>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="hub_menu_root" name="Textile Hub" web_icon="hub,static/description/icon.png">
+        <menuitem id="hub_machine" name="Machine">
+            <menuitem id="hub_model_menu_action" action="hub_machine_action"/> 
+         </menuitem>   
+    </menuitem>
+</odoo>
