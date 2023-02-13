@@ -1,42 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="hub_machine_action" model="ir.actions.act_window">
-        <field name="name">Machine</field>
+        <field name="name">Machines</field>
         <field name="res_model">machine.info</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Add Your First Property
+                Add Your First Product
             </p>
         </field>
     </record>
-
-<!-- Tree view  -->
+    <!-- Tree view  -->
     <record id="hub_machine_tree_view" model="ir.ui.view">
-    <field name="name">hub.machine.tree</field>
-    <field name="model">machine.info</field>
-    <field name="arch" type="xml">
-    <tree>
-    <field name="name"/>
-    <field name="product_type_id"/>
-    <field name="price"/>
-    </tree>
-    </field>
+        <field name="name">hub.machine.tree</field>
+        <field name="model">machine.info</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="product_type_id"/>
+                 <field name="production_capacity"/>
+                 <field name="power"/>
+                <field name="price"/>
+            </tree>
+        </field>
     </record>
-
-<!-- form view  -->
+    <!-- form view  -->
     <record id="hub_machine_form_view" model="ir.ui.view">
-    <field name="name">hub.machine.form</field>
-    <field name="model">machine.info</field>
-    <field name="arch" type="xml">
-    <form>
-    <sheet>
-        <div>
-        <h1> <field name="name"/></h1>
-        </div>
-        
-    </sheet>
-    </form>
-    </field>
+        <field name="name">hub.machine.form</field>
+        <field name="model">machine.info</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <br></br>
+                    <group>
+                        <group col="3">
+                        <field name="product_type_id"/>
+                            <field name="production_capacity"/>
+                            <field name="price"/>
+                            <field name="date_avilability"/>
+                            <field name="power"/>
+                            <field name="operating_type"/>
+                        </group>
+                        <group col="1">
+                            <field name="machine_image" widget="image" nolabel="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                    <page string="Description">
+                    <group>
+                    <field name="description"/>
+                    </group>
+                    <group col="3">
+                    <group>
+                    <field name="materials"/>
+                    </group>
+                    <group>
+                    <field name="delivery_time"/>
+                    <field name="payment_terms"/>
+                    </group>
+                    </group>
+                    </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
     </record>
 </odoo>

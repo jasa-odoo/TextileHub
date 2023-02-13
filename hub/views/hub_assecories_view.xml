@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hub_assecories_action" model="ir.actions.act_window">
+        <field name="name">Assecories</field>
+        <field name="res_model">assecories</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add Your First Product
+            </p>
+        </field>
+    </record>
+
+    <record id="hub_assecories_tree_view" model="ir.ui.view">
+        <field name="name">hub.machine.tree</field>
+        <field name="model">assecories</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="product_type_id"/>
+                <field name="a_price"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
