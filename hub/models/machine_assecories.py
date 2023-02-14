@@ -3,9 +3,9 @@ from odoo import models, fields
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
 
-class Assecories(models.Model):
-    _name = "assecories"
-    _description = "Assecories Model"
+class MachineAssecories(models.Model):
+    _name = "machine.assecories"
+    _description = "Machine assecories Model"
 
     name = fields.Char(required=True)
     a_price = fields.Float(required=True)

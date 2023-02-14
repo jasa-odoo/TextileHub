@@ -1,5 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 hub.access_machine_info,access_machine_info,hub.model_machine_info,base.group_user,1,1,1,1
 hub.access_machine_type,access_machine_type,hub.model_machine_type,base.group_user,1,1,1,1
-hub.access_materials,access_materials,hub.model_materials,base.group_user,1,1,1,1
-hub.access_assecories,access_assecories,hub.model_assecories,base.group_user,1,1,1,1
+hub.access_machine_materials,access_machine_materials,hub.model_machine_materials,base.group_user,1,1,1,1
+hub.access_machine_assecories,access_machine_assecories,hub.model_machine_assecories,base.group_user,1,1,1,1
+hub.access_machine_payment_term,access_machine_payment_term,hub.model_machine_payment_term,base.group_user,1,1,1,1
+hub.access_machine_operating_type,access_machine_operating_type,hub.model_machine_operating_type,base.group_user,1,1,1,1
+hub.access_machine_material_type,access_machine_material_type,hub.model_machine_material_type,base.group_user,1,1,1,1

@@ -2,9 +2,15 @@
 <odoo>
     <menuitem id="hub_menu_root" name="Textile Hub" web_icon="hub,static/description/icon.png">
         <menuitem id="hub_products" name="Products">
-            <menuitem id="hub_model_machine_action" action="hub_machine_action"/> 
+            <menuitem id="hub_model_machine_action" action="hub_machine_action"/>
             <menuitem id="hub_model_assecories_action" action="hub_assecories_action"/>
             <menuitem id="hub_model_materials_action" action="hub_materials_action"/>
          </menuitem>
+        <menuitem id="hub_configuration" name="Configuration">
+            <menuitem id="hub_machine_type_action" action="machine_type_action"/>
+            <menuitem id="hub_machine_operating_action" action="machine_operating_type_action"/>
+            <menuitem id="hub_machine_materials_type_action" action="machine_material_type_action"/>
+            <menuitem id="hub_machine_payment_action" action="machine_payment_term_action"/>
+        </menuitem>
     </menuitem>
 </odoo>

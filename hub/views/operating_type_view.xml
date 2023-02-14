@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <odoo>
-    <record id="hub_materials_action" model="ir.actions.act_window">
-        <field name="name">Machine materials</field>
-        <field name="res_model">machine.materials</field>
+    <record id="machine_operating_type_action" model="ir.actions.act_window">
+        <field name="name">Operating Type</field>
+        <field name="res_model">machine.operating.type</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Add Your First Product
+                Add First Material Type
             </p>
         </field>
     </record>

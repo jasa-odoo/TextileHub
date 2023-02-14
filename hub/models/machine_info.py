@@ -19,6 +19,8 @@ class MachineInfo(models.Model):
     machine_image = fields.Binary()
     materials = fields.Char()
     production_capacity = fields.Char()
+    machine_heads = fields.Integer(string="Number of heads")
+
     
 
 

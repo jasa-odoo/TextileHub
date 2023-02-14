@@ -7,6 +7,10 @@
         'views/hub_machine_views.xml',
         'views/hub_assecories_view.xml',
         'views/hub_materials_view.xml',
+        'views/machine_type_view.xml',
+        'views/material_type_view.xml',
+        'views/operating_type_view.xml',
+        'views/payment_term_view.xml',
         'views/hub_menus.xml'
     ],
     'application': True,

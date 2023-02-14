@@ -21,6 +21,7 @@
                  <field name="production_capacity"/>
                  <field name="power"/>
                 <field name="price"/>
+                <field name="machine_heads" optional="hide"/>
             </tree>
         </field>
     </record>
@@ -58,6 +59,7 @@
                     <group col="3">
                     <group>
                     <field name="materials"/>
+                    <field name="machine_heads" optional="hide"/>
                     </group>
                     <group>
                     <field name="delivery_time"/>
