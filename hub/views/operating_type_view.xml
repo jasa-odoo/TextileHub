@@ -7,8 +7,19 @@
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Add First Material Type
+                Add First Operating Type
             </p>
+        </field>
+    </record>
+
+    <record id="machine_operating_type_tree_view" model="ir.ui.view">
+        <field name="name">machine.operating.type.tree.view</field>
+        <field name="model">machine.operating.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </tree>
         </field>
     </record>
 </odoo>

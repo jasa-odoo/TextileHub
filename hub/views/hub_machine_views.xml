@@ -17,7 +17,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="product_type_id"/>
+                <field name="machine_type_id"/>
                  <field name="production_capacity"/>
                  <field name="power"/>
                 <field name="price"/>
@@ -40,12 +40,12 @@
                     <br></br>
                     <group>
                         <group col="3">
-                        <field name="product_type_id"/>
+                        <field name="machine_type_id"/>
                             <field name="production_capacity"/>
                             <field name="price"/>
                             <field name="date_avilability"/>
                             <field name="power"/>
-                            <field name="operating_type"/>
+                            <field name="operating_type_id"/>
                         </group>
                         <group col="1">
                             <field name="machine_image" widget="image" nolabel="1"/>
@@ -58,12 +58,13 @@
                     </group>
                     <group col="3">
                     <group>
-                    <field name="materials"/>
-                    <field name="machine_heads" optional="hide"/>
+                    <field name="material_type_id" widget="many2many_tags"/>
+                    <field name="machine_heads"/>
+                    <field name="temperature_req"/>
                     </group>
                     <group>
                     <field name="delivery_time"/>
-                    <field name="payment_terms"/>
+                    <field name="payment_term_id"/>
                     </group>
                     </group>
                     </page>

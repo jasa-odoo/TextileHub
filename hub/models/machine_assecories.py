@@ -9,4 +9,4 @@ class MachineAssecories(models.Model):
 
     name = fields.Char(required=True)
     a_price = fields.Float(required=True)
-    product_type_id = fields.Char(required=True, string="Machine Type")
+    machine_type_id = fields.Char(required=True, string="Machine Type")

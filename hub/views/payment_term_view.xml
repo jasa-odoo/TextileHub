@@ -11,4 +11,15 @@
             </p>
         </field>
     </record>
+
+    <record id="machine_payment_term_tree_view" model="ir.ui.view">
+        <field name="name">machine.payment.term.tree.view</field>
+        <field name="model">machine.payment.term</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
 </odoo>
