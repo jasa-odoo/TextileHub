@@ -10,4 +10,32 @@
             </p>
         </field>
     </record>
+    <record id="material_tree_view" model="ir.ui.view">
+    <field name="name">material.tree.view</field>
+    <field name="model">machine.materials</field>
+    <field name="arch" type="xml">
+        <tree string="Materials tree view">
+            <field name="name"/>
+            <field name="material_type_id"/>
+            <field name="m_price"/>
+        </tree>
+    </field>
+    </record>
+
+    <record id="material_form_view" model="ir.ui.view">
+        <field name="name">material.form.view</field>
+        <field name="model">machine.materials</field>
+        <field name="arch" type="xml">
+            <form string="Material form view">
+                <sheet>
+                    <h1><field name="name"/></h1>
+                    <group>
+                        <field name="material_type_id"/>
+                        <field name="printing_type" attrs="{'invisible': [('material_type_id', '!=', 'Ink')]}"/>
+                        <field name="m_price"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 </odoo>
