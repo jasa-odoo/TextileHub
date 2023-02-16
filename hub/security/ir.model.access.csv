@@ -6,3 +6,6 @@ hub.access_machine_assecories,access_machine_assecories,hub.model_machine_asseco
 hub.access_machine_payment_term,access_machine_payment_term,hub.model_machine_payment_term,base.group_user,1,1,1,1
 hub.access_machine_operating_type,access_machine_operating_type,hub.model_machine_operating_type,base.group_user,1,1,1,1
 hub.access_machine_material_type,access_machine_material_type,hub.model_machine_material_type,base.group_user,1,1,1,1
+hub.access_material_colour,access_material_colour,hub.model_material_colour,base.group_user,1,1,1,1
+hub.access_machine_attribute,access_machine_attribute,hub.model_machine_attribute,base.group_user,1,1,1,1
+hub.access_machine_attribute_value,access_machine_attribute_value,hub.model_machine_attribute_value,base.group_user,1,1,1,1

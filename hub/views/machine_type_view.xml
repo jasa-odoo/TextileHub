@@ -10,13 +10,12 @@
             </p>
         </field>
     </record>
-
     <record id="machine_type_tree_view" model="ir.ui.view">
         <field name="name">machie.type.tree.view</field>
         <field name="model">machine.type</field>
         <field name="arch" type="xml">
             <tree>
-            <field name="sequence" widget="handle"/>
+                <field name="sequence" widget="handle"/>
                 <field name="name"/>
             </tree>
         </field>

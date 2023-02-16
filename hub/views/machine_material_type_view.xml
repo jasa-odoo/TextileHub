@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <odoo>
     <record id="machine_material_type_action" model="ir.actions.act_window">
         <field name="name">Machine Material</field>
@@ -11,19 +10,14 @@
             </p>
         </field>
     </record>
-
     <record id="machine_material_type_tree_view" model="ir.ui.view">
         <field name="name">material.type.tree.view</field>
         <field name="model">machine.material.type</field>
         <field name="arch" type="xml">
-        <tree>
-        
-            <field name="sequence" widget="handle"/>
-            <field name= "name"/>
-
-        </tree>
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name= "name"/>
+            </tree>
         </field>
     </record>
-
-    
 </odoo>

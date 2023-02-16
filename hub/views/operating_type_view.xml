@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <odoo>
     <record id="machine_operating_type_action" model="ir.actions.act_window">
         <field name="name">Operating Type</field>
@@ -11,7 +10,6 @@
             </p>
         </field>
     </record>
-
     <record id="machine_operating_type_tree_view" model="ir.ui.view">
         <field name="name">machine.operating.type.tree.view</field>
         <field name="model">machine.operating.type</field>

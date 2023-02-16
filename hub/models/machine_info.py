@@ -7,7 +7,7 @@ class MachineInfo(models.Model):
     _name = "machine.info"
     _description = "Machine Info Model"
 
-    name = fields.Char(required=True,default="machine name")
+    name = fields.Char(required=True)
     description = fields.Text(required=True)
     price = fields.Float()
     date_avilability = fields.Date()
@@ -25,9 +25,12 @@ class MachineInfo(models.Model):
     @api.depends('machine_type_id')
     def _compute_temperature(self):
         for record in self:
-            words = record.machine_type_id.name.lower().split()
-            if "sublimation" in words:
-                record.temperature_req = "18 - 24 ° C"
+            if record.machine_type_id.name:
+                words = record.machine_type_id.name.lower().split(" ")
+                if "sublimation" in words:
+                    record.temperature_req = "18 - 24 ° C"
+                else:
+                    record.temperature_req = "Normal"
             else:
-                record.temperature_req = "Normal"
+                record.temperature_req = None
 

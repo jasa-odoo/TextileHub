@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <odoo>
     <record id="machine_payment_term_action" model="ir.actions.act_window">
         <field name="name">Payment Terms</field>
@@ -11,7 +10,6 @@
             </p>
         </field>
     </record>
-
     <record id="machine_payment_term_tree_view" model="ir.ui.view">
         <field name="name">machine.payment.term.tree.view</field>
         <field name="model">machine.payment.term</field>

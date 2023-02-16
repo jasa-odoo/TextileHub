@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="machine_attribute_action" model="ir.actions.act_window">
+        <field name="name">Attributes</field>
+        <field name="res_model">machine.attribute</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add Your First Attribute
+            </p>
+        </field>
+    </record>
+
+    <record id="machine_attribute_tree_view" model="ir.ui.view">
+        <field name="name">machine.attribute.tree.view</field>
+        <field name="model">machine.attribute</field>
+        <field name="arch" type="xml">
+            <tree string="attribute tree view">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -18,8 +18,8 @@
             <tree>
                 <field name="name"/>
                 <field name="machine_type_id"/>
-                 <field name="production_capacity"/>
-                 <field name="power"/>
+                <field name="production_capacity"/>
+                <field name="power"/>
                 <field name="price"/>
                 <field name="machine_heads" optional="hide"/>
             </tree>
@@ -40,7 +40,7 @@
                     <br></br>
                     <group>
                         <group col="3">
-                        <field name="machine_type_id"/>
+                            <field name="machine_type_id"/>
                             <field name="production_capacity"/>
                             <field name="price"/>
                             <field name="date_avilability"/>
@@ -52,22 +52,22 @@
                         </group>
                     </group>
                     <notebook>
-                    <page string="Description">
-                    <group>
-                    <field name="description"/>
-                    </group>
-                    <group col="3">
-                    <group>
-                    <field name="material_type_id" widget="many2many_tags"/>
-                    <field name="machine_heads"/>
-                    <field name="temperature_req"/>
-                    </group>
-                    <group>
-                    <field name="delivery_time"/>
-                    <field name="payment_term_id"/>
-                    </group>
-                    </group>
-                    </page>
+                        <page string="Description">
+                            <group>
+                                <field name="description"/>
+                            </group>
+                            <group col="3">
+                                <group>
+                                    <field name="material_type_id" widget="many2many_tags"/>
+                                    <field name="machine_heads"/>
+                                    <field name="temperature_req"/>
+                                </group>
+                                <group>
+                                    <field name="delivery_time"/>
+                                    <field name="payment_term_id"/>
+                                </group>
+                            </group>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
