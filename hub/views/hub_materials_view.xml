@@ -29,18 +29,47 @@
         <field name="arch" type="xml">
             <form string="Material form view">
                 <sheet>
+                <group>
+            
+                <label for="name" string="Product Name"/>
                     <h1>
                         <field name="name"/>
                     </h1>
-                    <group>
+                
+                    <group col="1">
+                    <field name="material_image" widget="image" nolabel="1"/>
+                    </group>
+                </group>
+                    <notebook>
+                        <page string="General Information">  
+                    <group col="6">
                         <field name="material_type_id"/>
                         <field name="printing_type" attrs="{'invisible': [('material_type_id', '!=', 2)]}"/>
-                        <field name="m_price"/>
+                   <field name="m_price"/>
                         <field name="material_colour_id" widget="many2many_tags" attrs="{'invisible': [('material_type_id', '=', 1)]}"/>
-                        <field name="packing" attrs="{'invisible' : [('material_type_id', '!=', 2)]}"/>
+                        <field name="volume"/>
+                        <field name="unit_of_measure"/>
+                        <field name="paper_weight" attrs="{'invisible': [('material_type_id', '!=', 1 )]}"/>
                     </group>
+                    <label for="description" string="Description"/>
+                    <field name="description"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="material_search_view" model="ir.ui.view">
+        <field name="name">material.search.view</field>
+        <field name="model">machine.materials</field>
+        <field name="arch" type="xml">
+            <search string="Search">
+                <field name="name"/>
+                <field name="material_type_id"/>
+                <field name="printing_type"/>
+                <field name="material_colour_id"/>
+            </search>
         </field>
     </record>
 </odoo>

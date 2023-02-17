@@ -12,7 +12,6 @@
             <menuitem id="hub_machine_materials_type_action" action="machine_material_type_action"/>
             <menuitem id="hub_machine_payment_action" action="machine_payment_term_action"/>
             <menuitem id="hub_material_colour_action" action="material_colour_action"/>
-            <menuitem id="hub_attribute_action" action="machine_attribute_action"/>
         </menuitem>
     </menuitem>
 </odoo>
