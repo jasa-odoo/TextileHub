@@ -13,12 +13,13 @@ class MachineMaterials(models.Model):
     m_price = fields.Float(required=True, string="price")
     material_type_id = fields.Many2one(
         'machine.material.type', string="Material Type")
-    printing_type = fields.Char(compute="_compute_printing_type")
+    printing_type = fields.Char(compute="_compute_printing_type",readonly=False)
     material_colour_id = fields.Many2many(
         'material.colour', string="Colour", domain="[('material_type_id', '=?', material_type_id)]")
     unit_of_measure = fields.Selection(
         selection=[('unit','Unit'),('ml','ml')]
     )
+    material_namee = fields.Char(related = 'material_type_id.name')
     paper_weight = fields.Char()
     material_image = fields.Binary()
     volume = fields.Char()
