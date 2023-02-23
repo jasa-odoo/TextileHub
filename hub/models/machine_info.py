@@ -21,6 +21,9 @@ class MachineInfo(models.Model):
     machine_heads = fields.Integer(string="Number of heads")
     machine_type_id = fields.Many2one('machine.type', required=True)
     temperature_req = fields.Char(string="Temperature Requirements",compute="_compute_temperature")
+    state = fields.Selection(
+        selection=[('in_stock','In Stock'),('out_stock','Out Of Stock')],default="in_stock"
+    )
 
     @api.depends('machine_type_id')
     def _compute_temperature(self):
@@ -33,4 +36,15 @@ class MachineInfo(models.Model):
                     record.temperature_req = "Normal"
             else:
                 record.temperature_req = None
+
+    def action_stock_in(self):
+        for record in self:
+            if record.state != 'in_stock':
+                record.state = 'in_stock'
+
+    def action_stock_out(self):
+        for record in self:
+            if record.state != 'out_stock':
+                record.state = 'out_stock'
+
 

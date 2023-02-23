@@ -15,13 +15,14 @@
         <field name="name">hub.machine.tree</field>
         <field name="model">machine.info</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree decoration-success = "state=='in_stock'" decoration-danger="state=='out_stock'">
                 <field name="name"/>
                 <field name="machine_type_id"/>
                 <field name="production_capacity"/>
                 <field name="power"/>
                 <field name="price"/>
                 <field name="machine_heads" optional="hide"/>
+                <field name="state"/>
             </tree>
         </field>
     </record>
@@ -31,7 +32,14 @@
         <field name="model">machine.info</field>
         <field name="arch" type="xml">
             <form>
+            <header>
+                <field name="state" widget="statusbar" options = "{'clickable' : '1'}"/>
+                <button name="action_stock_in" string="Stock In" type="object" class="oe_highlight"/>
+                <button name="action_stock_out" string="Stock Out" type="object"/>
+            </header>
                 <sheet>
+                <widget name="web_ribbon" title="In Stock" bg_color="bg-success" attrs="{'invisible': [('state', '!=', 'in_stock')]}"/>
+                 <widget name="web_ribbon" title="Out of Stock" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'out_stock')]}"/>
                     <div>
                         <h1>
                             <field name="name"/>

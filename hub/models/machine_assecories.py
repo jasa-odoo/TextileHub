@@ -8,5 +8,8 @@ class MachineAssecories(models.Model):
     _description = "Machine assecories Model"
 
     name = fields.Char(required=True)
-    a_price = fields.Float(required=True)
-    machine_type_id = fields.Char(required=True, string="Machine Type")
+    a_price = fields.Float(required=True , string="Price")
+    machine_type_id = fields.Many2one('machine.type' ,required=True, string="Machine Type")
+    a_image = fields.Binary()
+
+    

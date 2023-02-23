@@ -12,6 +12,7 @@
         'views/operating_type_view.xml',
         'views/payment_term_view.xml',
         'views/hub_colour_view.xml',
+        'views/hub_delivery.xml',
         'views/hub_menus.xml'
     ],
     'application': True,

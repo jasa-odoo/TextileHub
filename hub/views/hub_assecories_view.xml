@@ -10,9 +10,8 @@
             </p>
         </field>
     </record>
-
     <record id="hub_assecories_tree_view" model="ir.ui.view">
-        <field name="name">hub.machine.tree</field>
+        <field name="name">machine.assecories.tree</field>
         <field name="model">machine.assecories</field>
         <field name="arch" type="xml">
             <tree>
@@ -20,6 +19,29 @@
                 <field name="machine_type_id"/>
                 <field name="a_price"/>
             </tree>
+        </field>
+    </record>
+    <record id="hub_assecories_form_view" model="ir.ui.view">
+        <field name="name">machine.assecories.form</field>
+        <field name="model">machine.assecories</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <label for="name" string="Product Name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <group col="1">
+                            <field name="a_image" widget="image"/>
+                        </group>
+                    </group>
+                    <group col="6">
+                        <field name="machine_type_id"/>
+                        <field name="a_price"/>
+                    </group>
+                </sheet>
+            </form>
         </field>
     </record>
 </odoo>

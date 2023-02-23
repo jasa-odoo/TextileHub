@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="machine_delivery_action" model="ir.actions.act_window">
+        <field name="name">Delivery Policy</field>
+        <field name="res_model">machine.delivery</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add Your State Group
+            </p>
+        </field>
+    </record>
+    <record id="machine_delivery_tree_view" model="ir.ui.view">
+        <field name="name">machine.delivery.tree.view</field>
+        <field name="model">machine.delivery</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="machine_delivery_form_view" model="ir.ui.view">
+        <field name="name">machine.delivery.form.view</field>
+        <field name="model">machine.delivery</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="in_state" invisible="1"/>
+                        <field name="states" widget="many2many_tags" domain="[('country_id', '=', 'India')]"/>
+                        <field name="delivery"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

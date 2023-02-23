@@ -7,3 +7,4 @@ from . import machine_material_type
 from . import machine_operating_type
 from . import machine_payment_term
 from . import material_colour
+from . import machine_delivery

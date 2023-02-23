@@ -23,6 +23,10 @@ class MachineMaterials(models.Model):
     paper_weight = fields.Char()
     material_image = fields.Binary()
     volume = fields.Char()
+    state = fields.Selection(
+        selection=[('in_stock','In Stock'),('out_stock','Out Of Stock')],
+        default="in_stock"
+    )
 
     @api.depends('name')
     def _compute_printing_type(self):
@@ -36,3 +40,14 @@ class MachineMaterials(models.Model):
                     record.printing_type = None
             else:
                 record.printing_type = None
+
+
+    def action_stock_in(self):
+        for record in self:
+            if record.state != 'in_stock':
+                record.state = 'in_stock'
+
+    def action_stock_out(self):
+        for record in self:
+            if record.state != 'out_stock':
+                record.state = 'out_stock'
