@@ -6,6 +6,6 @@ class MachineOperatingType(models.Model):
     _description = "Machine operating type Model"
     _order = "sequence,id"
 
-    name = fields.Char(required=True,requried=True)
+    name = fields.Char(required=True)
     sequence = fields.Integer('sequence')
     

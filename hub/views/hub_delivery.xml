@@ -16,7 +16,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="sequence" widget="handle"/>
-                <field name="name"/>
+                <field name="state_group_id"/>
             </tree>
         </field>
     </record>
@@ -27,9 +27,8 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="in_state" invisible="1"/>
-                        <field name="states" widget="many2many_tags" domain="[('country_id', '=', 'India')]"/>
+                        <field name="state_group_id"/>
+                        <field name="states_id" widget="many2many_tags" domain="[('country_id', '=', 'India')]"/>
                         <field name="delivery"/>
                     </group>
                 </sheet>

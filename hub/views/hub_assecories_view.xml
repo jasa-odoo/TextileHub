@@ -33,15 +33,20 @@
                             <field name="name"/>
                         </h1>
                         <group col="1">
-                            <field name="a_image" widget="image"/>
+                            <field name="a_image" widget="image" nolabel="1"/>
                         </group>
                     </group>
-                    <group col="6">
-                        <field name="machine_type_id"/>
-                        <field name="a_price"/>
-                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <group col="6">
+                                <field name="machine_type_id"/>
+                                <field name="a_price"/>
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
     </record>
+
 </odoo>

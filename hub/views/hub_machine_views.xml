@@ -4,6 +4,7 @@
         <field name="name">Machines</field>
         <field name="res_model">machine.info</field>
         <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_available':True}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Add Your First Product
@@ -76,9 +77,30 @@
                                 </group>
                             </group>
                         </page>
+                        <page string="Delivery">
+                        <group>
+                            <field name="state_group_id"/>
+                            <field name="states_id" widget="many2many_tags"/>
+                            <!-- <field name= "state_id" /> -->
+                            <field name="delivery_time"/>                   
+                        </group>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
+        </field>
+    </record>
+    <record id="hub_machine_search_view" model="ir.ui.view">
+        <field name="name">hub.machine.search</field>
+        <field name="model">machine.info</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="price"/>
+                <field name="machine_type_id"/>
+                <field name="operating_type_id"/>
+                <filter name="available" string="Available" domain="[('state','=','in_stock')]"/>
+            </search>
         </field>
     </record>
 </odoo>

@@ -4,12 +4,12 @@ class MachineDelivery(models.Model):
     _name = "machine.delivery"
     _description = "Machine Delivery Model"
     _order = "sequence"
+    _rec_name = "state_group_id"
 
-    name = fields.Char(required=True, string="State Group")
-    states = fields.Many2many('res.country.state',required=True)
-    in_state = fields.Char(related="states.code")
+    state_group_id  = fields.Char(required=True,string="Country Group")
+    states_id= fields.Many2many('res.country.state',required=True)
     sequence = fields.Integer('sequence')
-    delivery = fields.Char(requried=True)
+    delivery = fields.Char(required=True)
  
 
     

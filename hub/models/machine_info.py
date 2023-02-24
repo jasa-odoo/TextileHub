@@ -11,7 +11,10 @@ class MachineInfo(models.Model):
     description = fields.Text(required=True)
     price = fields.Float()
     date_avilability = fields.Date()
-    delivery_time = fields.Char()
+    state_group_id = fields.Many2one('machine.delivery')
+    states_id = fields.Many2many('res.country.state',compute="_compute_state_id")
+    # state_id = fields.Many2one('res.country.state',string="State",domain="[('id', 'in', states_id)]")
+    delivery_time = fields.Char(related="state_group_id.delivery")
     power = fields.Char()
     payment_term_id = fields.Many2one('machine.payment.term')
     operating_type_id = fields.Many2one('machine.operating.type',required=True,string="Operating Type")
@@ -36,6 +39,11 @@ class MachineInfo(models.Model):
                     record.temperature_req = "Normal"
             else:
                 record.temperature_req = None
+
+    @api.depends('states_id')
+    def _compute_state_id(self):
+        for record in self:
+            record.states_id = record.state_group_id.mapped('states_id')
 
     def action_stock_in(self):
         for record in self:
