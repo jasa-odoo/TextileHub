@@ -12,4 +12,4 @@ class MachineDelivery(models.Model):
     delivery = fields.Char(required=True)
  
 
-    
+   

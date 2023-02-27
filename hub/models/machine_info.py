@@ -40,7 +40,7 @@ class MachineInfo(models.Model):
             else:
                 record.temperature_req = None
 
-    @api.depends('states_id')
+    @api.depends('state_group_id')
     def _compute_state_id(self):
         for record in self:
             record.states_id = record.state_group_id.mapped('states_id')
