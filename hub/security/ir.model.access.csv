@@ -1,5 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-hub.access_machine_info,access_machine_info,hub.model_machine_info,base.group_user,1,1,1,1
 hub.access_machine_type,access_machine_type,hub.model_machine_type,base.group_user,1,1,1,1
 hub.access_machine_materials,access_machine_materials,hub.model_machine_materials,base.group_user,1,1,1,1
 hub.access_machine_assecories,access_machine_assecories,hub.model_machine_assecories,base.group_user,1,1,1,1
