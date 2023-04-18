@@ -138,8 +138,8 @@
                             <page string="Other Info.">
                                 <group col="6">
                                     <field name="detailed_type"/>
-                                    <field name="service_policy" string="Invoicing Policy" attrs="{'invisible': [('type', '!=', 'service')], 'required': [('type', '=', 'service')]}"/>
-                                    <field name="service_tracking" required="1" attrs="{'invisible': [('type', '!=', 'service')]}"/>
+                                    <field name="service_policy" string="Invoicing Policy" attrs="{'invisible': [('detailed_type', '!=', 'service')], 'required': [('detailed_type', '=', 'service')]}"/>
+                                    <field name="service_tracking" required="1" attrs="{'invisible': [('detailed_type', '!=', 'service')]}"/>
                                     <field name="project_id" context="{'default_allow_billable': True}" attrs="{'invisible':[('service_tracking','!=','task_global_project')], 'required':[('service_tracking','==','task_global_project')]}"/>
                                     <field name="project_template_id" context="{'active_test': False, 'default_allow_billable': True}" attrs="{'invisible':[('service_tracking','not in',['task_in_project', 'project_only'])]}"/>
                                 </group>
