@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_product">
+        <t t-foreach="docs" t-as="product">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>
+                            <span t-field="product.name"/>
+                        </h2>
+                        <div>
+                            <strong>Product Type:</strong>
+                            <span t-field="product.type"/>
+                        </div>
+                        <div>
+                            <strong>Machine Type: </strong>
+                            <span t-field="product.machine_type_id"/>
+                        </div>
+                        <div>
+                           <strong>Production Capacity:</strong>
+                           <span t-field="product.production_capacity"/>
+                        </div>
+                        <div>
+                           <strong>Materials:</strong>
+                           <span t-field="product.material_type_ids"/>
+                        </div>
+                        <div>
+                           <strong>Operating Type:</strong>
+                           <span t-field="product.operating_type"/>
+                        </div>
+                        <div>
+                           <strong>Power:</strong>
+                           <span t-field="product.power"/>
+                        </div>
+                        <div>
+                           <strong>Description:</strong>
+                           <span t-field="product.list_price"/>
+                        </div>
+                        <div>
+                           <strong>Payment Term:</strong>
+                           <span t-field="product.payment_term_id"/>
+                        </div>
+                        <div>
+                           <strong>Date Availability:</strong>
+                           <span t-field="product.date_avilability"/>
+                        </div>
+                        <div>
+                           <strong>Number of Heads:</strong>
+                           <span t-field="product.machine_heads"/>
+                        </div>
+                        <div>
+                           <strong>Temperature Requirements:</strong>
+                           <span t-field="product.temperature_req"/>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+
+    </template>
+
+</odoo>
