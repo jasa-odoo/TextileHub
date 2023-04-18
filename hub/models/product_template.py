@@ -5,9 +5,11 @@ from datetime import datetime
 
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
-    
+
+    # machine field******************************************************************************************* 
+
     description = fields.Text()
-    price = fields.Float()
+    # price = fields.Float()
     date_avilability = fields.Date()
     state_group_id = fields.Many2one('machine.delivery')
     states_id = fields.Many2many('res.country.state',compute="_compute_state_id")
@@ -15,9 +17,11 @@ class ProductTemplate(models.Model):
     delivery_time = fields.Char(related="state_group_id.delivery")
     power = fields.Char()
     payment_term_id = fields.Many2one('machine.payment.term')
-    operating_type_id = fields.Many2one('machine.operating.type',string="Operating Type")
+    operating_type = fields.Selection(
+        selection=[('manual','Manual'),('semi automatic','Semi Automatic'),('fully automatic','Fully Automatic')]
+    )
     machine_image = fields.Binary()
-    material_type_id = fields.Many2many('machine.material.type', string="Materials")
+    material_type_ids = fields.Many2many('machine.material.type', string="Materials")
     production_capacity = fields.Char()
     machine_heads = fields.Integer(string="Number of heads")
     machine_type_id = fields.Many2one('machine.type')
@@ -26,7 +30,8 @@ class ProductTemplate(models.Model):
         selection=[('in_stock','In Stock'),('out_stock','Out Of Stock')],default="in_stock"
         )
     product_type = fields.Selection(
-        selection=[('machine','Machine'),('assecories','Assecories'),('material','Material')]
+        selection=[('machine','Machine'),('assecories','Assecories'),('material','Material')], 
+        default="machine"
     )
 
     @api.depends('machine_type_id')
@@ -55,8 +60,20 @@ class ProductTemplate(models.Model):
         for record in self:
             if record.state != 'out_stock':
                 record.state = 'out_stock'
-    # machine_id = fields.Many2one('hub.machine_info', string='Machine')
-    # name = fields.Char(delegate=['machine_id.name'])
-    # description = fields.Text(delegate=['machine_id.description'])
-    # list_price = fields.Float(delegate=['machine_id.price'])
-    # default_code = fields.Char(delegate=['machine_id.name'])
+   
+#    Material field***********************************************************************************************
+
+    material_type_id = fields.Many2one(
+        'machine.material.type', string="Material Type")
+    printing_type = fields.Selection(
+        selection=[('transfer printing','Transfer Printing'),('direct fabric printing','Direct Fabric Printing')]
+    )
+    material_colour_id = fields.Many2many(
+        'material.colour', string="Colour", domain="[('material_type_id', '=?', material_type_id)]")
+    unit_of_measure = fields.Selection(
+        selection=[('unit','Unit'),('ml','ml')]
+    )
+    material_namee = fields.Char(related = 'material_type_id.name')
+    paper_weight = fields.Char()
+    material_image = fields.Binary()
+    volume = fields.Char()
