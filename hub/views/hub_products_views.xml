@@ -3,7 +3,7 @@
     <record id="hub_products_action" model="ir.actions.act_window">
         <field name="name">Products</field>
         <field name="res_model">product.template</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,form,tree</field>
         <field name="context">{'search_default_available':True}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
@@ -92,7 +92,8 @@
                                 <field name="name"/>
                             </h1>
                             <group col="1">
-                                <field name="machine_image" widget="image" nolabel="1"/>
+                                <field name="image_1920" widget="image" nolabel="1" />
+                                <!-- <field name="machine_image" widget="image" nolabel="1"/> -->
                             </group>
                         </group>
                         <notebook>
