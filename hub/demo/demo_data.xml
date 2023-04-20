@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="machine_type_1" model="machine.type">
+        <field name="name">Machine sublimation</field>
+    </record>
+
+    <record id="machine_type_2" model="machine.type">
+        <field name="name">Machine Type 2</field>
+    </record>
+
+    <record id="machine_type_3" model="machine.type">
+        <field name="name">Machine Type 3</field>
+    </record>
+
+    <record id="material_type_1" model="machine.material.type">
+        <field name="name">Material Type 1</field>
+    </record>
+
+    <record id="material_type_2" model="machine.material.type">
+        <field name="name">Material Type 2</field>
+    </record>
+
+    <record id="material_type_3" model="machine.material.type">
+        <field name="name">Material Type 3</field>
+    </record>
+
+    <record id="payment_term_1" model="machine.payment.term">
+        <field name="name">Payment Term 1</field>
+    </record>
+
+    <record id="payment_term_2" model="machine.payment.term">
+        <field name="name">Payment Term 2</field>
+    </record>
+
+    <record id="payment_term_3" model="machine.payment.term">
+        <field name="name">Payment Term 3</field>
+    </record>
+
+
+
+</odoo>

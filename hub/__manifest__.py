@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Textile Hub",
-    'depends': ['base','stock','sale_management','account','project'],
+    'depends': ['base','stock','sale_management','account','sale_project'],
     'data': [
         'security/ir.model.access.csv',
         'views/hub_products_views.xml',
@@ -14,6 +14,12 @@
         'report/hub_product_reports.xml',
         'report/hub_product_templates.xml',
     ],
+    'demo':[
+        "demo/demo_data.xml"
+        
+    ],
+
+
     'application': True,
     'license': 'LGPL-3',
     'images': ['static/description/icon.png']
