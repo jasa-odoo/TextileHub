@@ -13,6 +13,7 @@
         'views/hub_menus.xml',
         'report/hub_product_reports.xml',
         'report/hub_product_templates.xml',
+        'wizard/hub_delivery_views.xml',
     ],
     'demo':[
         "demo/demo_data.xml"

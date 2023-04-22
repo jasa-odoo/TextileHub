@@ -5,54 +5,30 @@
             <t t-call="web.html_container">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <h2>
-                            <span t-field="product.name"/>
-                        </h2>
-                        <div>
-                            <strong>Product Type:</strong>
-                            <span t-field="product.type"/>
+                        <h1>
+                            <span t-field="product.name" style="font-weight:bold"/>
+                        </h1>
+                        <div style="overflow: hidden; text-align: center;">
+                           <span t-field="product.image_1920" t-options='{"widget": "image"}' style="background: #222;color: #fff;display: inline-block;margin: 10px 10px 0 0;padding: 5px 10px"/>
                         </div>
-                        <div>
-                            <strong>Machine Type: </strong>
-                            <span t-field="product.machine_type_id"/>
-                        </div>
-                        <div>
-                           <strong>Production Capacity:</strong>
-                           <span t-field="product.production_capacity"/>
-                        </div>
-                        <div>
-                           <strong>Materials:</strong>
-                           <span t-field="product.material_type_ids"/>
-                        </div>
-                        <div>
-                           <strong>Operating Type:</strong>
-                           <span t-field="product.operating_type"/>
-                        </div>
-                        <div>
-                           <strong>Power:</strong>
-                           <span t-field="product.power"/>
-                        </div>
-                        <div>
-                           <strong>Description:</strong>
-                           <span t-field="product.list_price"/>
-                        </div>
-                        <div>
-                           <strong>Payment Term:</strong>
-                           <span t-field="product.payment_term_id"/>
-                        </div>
-                        <div>
-                           <strong>Date Availability:</strong>
-                           <span t-field="product.date_avilability"/>
-                        </div>
-                        <div>
-                           <strong>Number of Heads:</strong>
-                           <span t-field="product.machine_heads"/>
-                        </div>
-                        <div>
-                           <strong>Temperature Requirements:</strong>
-                           <span t-field="product.temperature_req"/>
-                        </div>
+                        <br/>
+                        <br/>
 
+                        <div>
+                         <h2>
+                           <strong>Price:</strong>
+                           <span t-field="product.list_price"/>
+                         </h2>
+                        </div>
+                        <t t-if="product.product_type  == 'machine'">
+                          <t t-call="hub.machine_report"/>
+                        </t>
+                        <t t-if="product.product_type  == 'assecories'">
+                          <t t-call="hub.accessories_report"/>
+                        </t>
+                        <t t-if="product.product_type  == 'material'">
+                          <t t-call="hub.material_report"/>
+                        </t>
                     </div>
                 </t>
             </t>
@@ -60,4 +36,96 @@
 
     </template>
 
+   <template id="machine_report">
+                <div>
+                    <strong>Product Type:</strong>
+                    <span t-field="product.product_type"/>
+                </div>
+                <div>
+                    <strong>Machine Type: </strong>
+                    <span t-field="product.machine_type_id"/>
+                </div>
+                <div>
+                    <strong>Production Capacity:</strong>
+                    <span t-field="product.production_capacity"/>
+                </div>
+                <div>
+                    <strong>Materials:</strong>
+                    <span t-field="product.material_type_ids"/>
+                </div>
+                <div>
+                    <strong>Operating Type:</strong>
+                    <span t-field="product.operating_type"/>
+                </div>
+                <div>
+                    <strong>Power:</strong>
+                    <span t-field="product.power"/>
+                </div>
+                <div>
+                    <strong>Description:</strong>
+                    <span t-field="product.description"/>
+                </div>
+
+                <div>
+                    <strong>Payment Term:</strong>
+                    <span t-field="product.payment_term_id"/>
+                </div>
+                <div>
+                    <strong>Date Availability:</strong>
+                    <span t-field="product.date_avilability"/>
+                </div>
+                <div>
+                    <strong>Number of Heads:</strong>
+                    <span t-field="product.machine_heads"/>
+                </div>
+                <div>
+                    <strong>Temperature Requirements:</strong>
+                    <span t-field="product.temperature_req"/>
+                </div>
+  </template>
+ 
+   <template id="accessories_report">
+                <div>
+                    <strong>Product Type:</strong>
+                    <span t-field="product.product_type"/>
+                </div>
+                <div>
+                    <strong>Machine Type: </strong>
+                    <span t-field="product.machine_type_id"/>
+                </div>
+                <div>
+                    <strong>Description:</strong>
+                    <span t-field="product.description"/>
+                </div>
+    </template>
+
+    <template id="material_report">
+                <div>
+                    <strong>Product Type:</strong>
+                    <span t-field="product.product_type"/>
+                </div>
+                <div>
+                    <strong>Materials: </strong>
+                    <span t-field="product.material_type_id"/>
+                </div>
+                <div>
+                    <strong>Material Colour:</strong>
+                    <span t-field="product.material_colour_id"/>
+                </div>
+                <div>
+                    <strong>Volume:</strong>
+                    <span t-field="product.volume"/>
+                </div>
+                <div>
+                    <strong>Unit of Measure:</strong>
+                    <span t-field="product.unit_of_measure"/>
+                </div>
+
+                <div>
+                    <strong>Description:</strong>
+                    <span t-field="product.description"/>
+                </div>
+    </template>
+
+ 
 </odoo>
