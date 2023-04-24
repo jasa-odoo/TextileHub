@@ -16,6 +16,3 @@ class MachineDelivery(models.Model):
     sequence = fields.Integer('sequence')
     delivery = fields.Char(required=True)
  
-
-    # country_ids = fields.Many2many('res.country', 'res_country_res_country_group_rel',
-    #                                'res_country_group_id', 'res_country_id', string='Countries')

@@ -9,11 +9,15 @@ class ChooseDeliveryCarrier(models.TransientModel):
     _name = 'hub.delivery'
     _description = 'Delivery Selection Wizard'
 
-    address = fields.Char("Address")
+    
+    order_id = fields.Many2one('sale.order', ondelete="cascade")
 
-    state_group_id = fields.Many2one("machine.delivery",string="Country Group")
-    delivery = fields.Char(related="state_group_id.delivery")
-    # state_id = fields.Many2many("machine.delivery",readonly=False,string='Country Groups')
+    state_group_id = fields.Many2one("machine.delivery",string="Country Group",store=True)
+    delivery = fields.Char(related="state_group_id.delivery",store=True)
 
     
+    def button_confirm(self):
+        self.order_id.delivery_days = self.delivery
+        self.order_id.state_group_id =self.state_group_id
+        print(self.order_id.delivery_days)
 

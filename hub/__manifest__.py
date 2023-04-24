@@ -11,6 +11,7 @@
         'views/hub_colour_view.xml',
         'views/hub_delivery.xml',
         'views/hub_menus.xml',
+        'views/sale_order_views.xml',
         'report/hub_product_reports.xml',
         'report/hub_product_templates.xml',
         'wizard/hub_delivery_views.xml',
