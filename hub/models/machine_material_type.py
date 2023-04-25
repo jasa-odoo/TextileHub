@@ -8,4 +8,5 @@ class MachineMaterialType(models.Model):
 
     name = fields.Char(required=True)
     sequence = fields.Integer('sequence')
+    tags_color = fields.Integer()
     

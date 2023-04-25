@@ -17,7 +17,7 @@
             <tree>
                 <field name="sequence" widget="handle"/>
                 <field name="state_group_id"/>
-                <field name="states_id"/>
+                <field name="state_ids"/>
                 <field name="delivery"/>
             </tree>
         </field>

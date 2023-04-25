@@ -11,12 +11,6 @@
                       <field name="delivery"/>
                     </group>
                 </group>
-                <!-- <div role="alert" class="alert alert-warning" attrs="{'invisible': [('invoicing_message', '=', '')]}">
-                    <field name="invoicing_message" nolabel="1"/>
-                </div>
-                <div role="alert" class="alert alert-info" attrs="{'invisible': [('delivery_message', '=', False)]}">
-                    <field name="delivery_message" nolabel="1"/>
-                </div> -->
                 <footer>
                     <button name="button_confirm" type="object" string="Add" class="btn-primary" data-hotkey="q"/>
                     <button string="Discard" special="cancel" data-hotkey="z" class="btn-secondary"/>

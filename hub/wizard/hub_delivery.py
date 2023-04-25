@@ -19,5 +19,4 @@ class ChooseDeliveryCarrier(models.TransientModel):
     def button_confirm(self):
         self.order_id.delivery_days = self.delivery
         self.order_id.state_group_id =self.state_group_id
-        print(self.order_id.delivery_days)
 

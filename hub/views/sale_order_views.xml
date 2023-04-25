@@ -8,8 +8,8 @@
 
             <field name="sale_order_template_id" position="after">
                 <field name="delivery_days"
-                    options="{'no_create': True}" attrs="{'invisible': [('state_group_id','!=',1)]}"/>
-                <field name="state_group_id" attrs="{'invisible': [('state_group_id','!=',1)]}"/>
+                    options="{'no_create': True}" attrs="{'invisible': [('state_group_id','=',False)]}"/>
+                <field name="state_group_id" attrs="{'invisible': [('state_group_id','=',False)]}"/>
             </field>
         </field>
     </record>

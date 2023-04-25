@@ -105,7 +105,7 @@
                                     <group col="6">
                                         <field name="machine_type_id"/>
                                         <field name="production_capacity"/>
-                                        <field name="material_type_ids" widget="many2many_tags"/>
+                                        <field name="material_type_ids" widget="many2many_tags" options="{'color_field': 'tags_color'}"/>
                                         <field name="operating_type"/>
                                         <field name="power"/>
                                     </group>

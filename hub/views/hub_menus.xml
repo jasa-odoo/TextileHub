@@ -6,8 +6,8 @@
             <menuitem id="hub_action_move_out_invoice_type" action="account.action_move_out_invoice_type"/>
             <menuitem id="hub_action_quotations" action="sale.action_quotations_with_onboarding" />
         </menuitem>
-        <menuitem id="hub_action_social_marketing" action="social.action_social_stream_post" />
-        <menuitem id="hub_configuration" name="Configuration" sequence="2">
+        <menuitem id="hub_action_social_marketing" name="Social Marketing" action="social.action_social_stream_post" sequence="2"/>
+        <menuitem id="hub_configuration" name="Configuration" sequence="3">
             <menuitem id="hub_machine_type_action" action="machine_type_action"/>
             <menuitem id="hub_machine_materials_type_action" action="machine_material_type_action"/>
             <menuitem id="hub_material_colour_action" action="material_colour_action"/>

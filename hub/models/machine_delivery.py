@@ -6,13 +6,8 @@ class MachineDelivery(models.Model):
     _order = "sequence"
     _rec_name = "state_group_id"
 
-<<<<<<< HEAD
     state_group_id  = fields.Char(required=True,string="State Group")
-    states_id= fields.Many2many('res.country.state',required=True)
-=======
-    state_group_id  = fields.Char(required=True,string="Country Group")
-    state_ids= fields.Many2many('res.country.state',required=True)
->>>>>>> 73534e6 (Report modified)
+    state_ids = fields.Many2many('res.country.state',required=True)
     sequence = fields.Integer('sequence')
     delivery = fields.Char(required=True)
  
