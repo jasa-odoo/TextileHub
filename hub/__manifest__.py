@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Textile Hub",
-    'depends': ['base','stock','sale_management','account','sale_project','social'],
+    'depends': ['base','stock','sale_management','account','sale_project','social', 'website_payment'],
     'data': [
         'security/ir.model.access.csv',
         'views/hub_products_views.xml',

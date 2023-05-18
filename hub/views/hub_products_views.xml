@@ -27,50 +27,7 @@
             </tree>
         </field>
     </record>
-    <!-- form view  -->
-    <!-- <record id="hub_machine_form_view" model="ir.ui.view">
-        <field name="name">hub.machine.form</field>
-        <field name="model">product.template</field>
-        <field name="arch" type="xml">
-            <form >
-                <header>
-                    <field name="state" widget="statusbar" options = "{'clickable' : '1'}"/>
-                    <button name="action_stock_in" string="Stock In" type="object" class="oe_highlight"/>
-                    <button name="action_stock_out" string="Stock Out" type="object"/>
-                </header>
-                <sheet>
-                    <widget name="web_ribbon" title="In Stock" bg_color="bg-success" attrs="{'invisible': [('state', '!=', 'in_stock')]}"/>
-                    <widget name="web_ribbon" title="Out of Stock" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'out_stock')]}"/>
-                    <group>
-                        <label for="name" string="Product Name"/>
-                        <h1>
-                            <field name="name"/>
-                        </h1>
-                        <group col="1">
-                            <field name="machine_image" widget="image" nolabel="1"/>
-                        </group>
-                    </group>
-                    <notebook>
-                        <page string="General Information">
-                            <group col="6">
-                                <field name="product_type"/>
-                            </group>
-                            <group col="6" attrs="{'invisible': [('product_type','!=','machine')]}">
-                                <field name="machine_type_id"/>
-                                <field name="production_capacity"/>
-                                <field name="price"/>
-                                <field name="date_avilability"/>
-                                <field name="power"/>
-                                <field name="operating_type"/>
-                            </group>
-                            <label for="description" string="Description"/>
-                            <field name="description"/>
-                        </page>
-                    </notebook>
-                </sheet>
-            </form>
-        </field>
-    </record> -->
+
     <record id="product_product_form_view_inherit" model="ir.ui.view">
         <field name="name">product.product.form.inherit</field>
         <field name="model">product.template</field>
@@ -83,6 +40,8 @@
                         <button name="action_stock_in" string="Stock In" type="object" class="oe_highlight"/>
                         <button name="action_stock_out" string="Stock Out" type="object"/>
                     </header>
+                    
+
                     <sheet>
                         <widget name="web_ribbon" title="In Stock" bg_color="bg-success" attrs="{'invisible': [('state', '!=', 'in_stock')]}"/>
                         <widget name="web_ribbon" title="Out of Stock" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'out_stock')]}"/>
@@ -91,7 +50,13 @@
                             <label for="name" string="Product Name"/>
                             <h1>
                                 <field name="name"/>
+                                <field name="uom_id" invisible="1"/>
                             </h1>
+                            <div name="pricing">
+                            <field name="list_price" class="oe_inline" widget='monetary'
+                                        options="{'currency_field': 'currency_id', 'field_digits': True}" invisible="1"/>
+                            </div>
+                            <field name="product_variant_count" invisible="1"/>
                            </group>
                             <group>
                                 <field name="image_1920" widget="image" nolabel="1" style="width: 400px; height: auto;" />
@@ -125,7 +90,7 @@
                                     <field name="material_type_id"/>
                                     <field name="printing_type" attrs="{'invisible': [('material_namee', '!=', 'Ink')]}"/>
                                     <field name="list_price"/>
-                                    <field name="material_colour_id" widget="many2many_tags" attrs="{'invisible': [('material_namee', '=', 'Paper')]}"/>
+                                    <field name="material_colour_id" widget="many2many_tags" attrs="{'invisible': [('material_namee', '=', 'Paper')]}" options="{'color_field': 'tags_color'}"/>
                                     <field name="volume"/>
                                     <field name="unit_of_measure"/>
                                     <field name="paper_weight" attrs="{'invisible': [('material_namee', '!=', 'Paper' )]}"/>
@@ -146,7 +111,7 @@
                                     <field name="project_template_id" context="{'active_test': False, 'default_allow_billable': True}" attrs="{'invisible':[('service_tracking','not in',['task_in_project', 'project_only'])]}"/>
                                 </group>
                                 <group col="6">
-                            
+                                
                             </group>
                             </page>
                         </notebook>
@@ -164,9 +129,6 @@
         <field name="arch" type="xml">
             <kanban sample="1" class="o_kanban_product_template">
                 <field name="id"/>
-                <!-- <field name="product_variant_count"/>
-                <field name="currency_id"/>
-                <field name="activity_state"/> -->
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_card oe_kanban_global_click">
@@ -184,74 +146,15 @@
                                 <div name="product_lst_price" class="mt-1">
                                     Price: <field name="list_price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"></field>
                                 </div>
-                                <div name="power" class="mt-1">
-                                    Power: <field name="power"/>
+                                <div name="type" class="mt-1">
+                                    Type: <field name="product_type"/>
                                 </div>
-
                             </div>
                         </div>
                     </t>
                 </templates>
-            </kanban>
+            </kanban> 
         </field>
     </record>
 
 </odoo>
-<!-- <field name="arch" type="xml">
-            <form>
-                <header>
-                    <field name="state" widget="statusbar" options = "{'clickable' : '1'}"/>
-                    <button name="action_stock_in" string="Stock In" type="object" class="oe_highlight"/>
-                    <button name="action_stock_out" string="Stock Out" type="object"/>
-                </header>
-                <sheet>
-                    <widget name="web_ribbon" title="In Stock" bg_color="bg-success" attrs="{'invisible': [('state', '!=', 'in_stock')]}"/>
-                    <widget name="web_ribbon" title="Out of Stock" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'out_stock')]}"/>
-                    <div>
-                        <h1>
-                            <field name="name"/>
-                        </h1>
-                    </div>
-                    <br></br>
-                    <label for="product_type" string="Product Type"/>
-                    <field name="product_type"/>
-                    <group>
-                        <group col="3" attrs="{'invisible': [('product_type', '!=', 'machine')]} ">
-                            <field name="machine_type_id" />
-                            <field name="production_capacity"/>
-                            <field name="price"/>
-                            <field name="date_avilability"/>
-                            <field name="power"/>
-                            <field name="operating_type_id"/>
-                        </group>
-                        <group col="1">
-                            <field name="machine_image" widget="image" nolabel="1"/>
-                        </group>
-                    </group>
-                    <notebook>
-                        <page string="Description">
-                            <group>
-                                <field name="description"/>
-                            </group>
-                            <group col="3" attrs="{'invisible': [('product_type', '!=', 'machine')]} ">
-                                <group>
-                                    <field name="material_type_id" widget="many2many_tags"/>
-                                    <field name="machine_heads"/>
-                                    <field name="temperature_req"/>
-                                    <field name="delivery_time"/>
-                                    <field name="payment_term_id"/>
-                                </group>
-                            </group>
-                        </page>
-                        <page string="Delivery">
-                            <group>
-                                <field name="state_group_id"/>
-                                <field name="states_id" widget="many2many_tags"/>
-                                <field name= "state_id" />
-                                <field name="delivery_time"/>
-                            </group>
-                        </page>
-                    </notebook>
-                </sheet>
-            </form>
-        </field> -->

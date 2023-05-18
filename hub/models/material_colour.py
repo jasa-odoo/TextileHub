@@ -7,6 +7,7 @@ class MaterialColour(models.Model):
 
     name = fields.Char()
     material_type_id = fields.Many2many('machine.material.type',string="Only For")
+    tags_color = fields.Integer()
 
 
     def name_get(self):

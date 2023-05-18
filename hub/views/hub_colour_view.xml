@@ -10,15 +10,36 @@
             </p>
         </field>
     </record>
-
     <record id="material_colour_tree_view" model="ir.ui.view">
-        <field name="name">Material Colours</field>
+        <field name="name">Material Colours tree</field>
         <field name="model">material.colour</field>
         <field name="arch" type="xml">
-            <tree string="colour tree view" editable="bottom">
-                <field name="name"/>
-                <field name="material_type_id" widget="many2many_tags"/>
+            <tree string="colour tree view">
+                <field name="name" options="{'color_field': 'tags_color'}"/>
+                <field name="material_type_id" widget="many2many_tags" options="{'color_field': 'tags_color'}"/>
+                <field name="tags_color" widget="color_picker"/>
             </tree>
         </field>
     </record>
-</odoo>     
+    <record id="material_colour_form_view" model="ir.ui.view">
+        <field name="name">Material Colours form</field>
+        <field name="model">material.colour</field>
+        <field name="arch" type="xml">
+            <form string="colour form view">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" string="Colour" options="{'color_field': 'tags_color'}"/>
+                        </group>
+                        <group>
+                            <field name="tags_color" widget="color_picker" nolabel="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="material_type_id" widget="many2many_tags" options="{'color_field': 'tags_color'}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
